@@ -2,20 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Scale, Lock, FileText, Calendar, Search, Users, Heart, ArrowRight, Sparkles, Zap, Shield, Brain } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Scale, FileText, Calendar, Search, Users, Heart, ArrowRight, Sparkles, Zap, Shield, Brain } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -139,7 +131,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          
+
         </div>
       </section>
 
@@ -324,7 +316,7 @@ export default function Home() {
               Meet Our Team
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              The brilliant minds behind Legal RAG's innovative technology
+              The brilliant minds behind Legal RAG&apos;s innovative technology
             </p>
           </div>
 
@@ -332,9 +324,11 @@ export default function Home() {
             <Card className="w-72 border-0 shadow-lg bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
               <CardContent className="text-center p-8">
                 <div className="relative mb-6">
-                  <img
-                    src="profile.png"
+                  <Image
+                    src="/profile.png"
                     alt="Priyanshu Rathore"
+                    width={112}
+                    height={112}
                     className="w-28 h-28 rounded-full mx-auto object-cover border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
@@ -354,9 +348,11 @@ export default function Home() {
             <Card className="w-72 border-0 shadow-lg bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
               <CardContent className="text-center p-8">
                 <div className="relative mb-6">
-                  <img
-                    src="ragh.jpg"
+                  <Image
+                    src="/ragh.jpg"
                     alt="Raghav Goel"
+                    width={112}
+                    height={112}
                     className="w-28 h-28 rounded-full mx-auto object-cover border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center">
@@ -373,7 +369,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-           
+
           </div>
         </div>
       </section>
