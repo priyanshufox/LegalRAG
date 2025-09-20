@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Scale, MessageSquare, FileText, Home, User, Upload, Calendar, FileCheck, Loader2 } from 'lucide-react';
+import { Scale, MessageSquare, FileText, Home, User, Calendar, FileCheck, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { apiClient, ExtractEventsDatesResponse, SummarizePdfResponse } from '@/lib/api';
 
@@ -51,13 +51,13 @@ function PdfToolsSection() {
                     if (jsonData.events && Array.isArray(jsonData.events)) {
                         // Convert JSON to timeline format
                         timelineText = "📅 Case Timeline\n\n";
-                        jsonData.events.forEach((event: any) => {
+                        jsonData.events.forEach((event: { date: string; event: string }) => {
                             if (event.date && event.event) {
                                 timelineText += `${event.date} – ${event.event}\n\n`;
                             }
                         });
                     }
-                } catch (e) {
+                } catch {
                     // If not JSON, use the string as is
                     timelineText = result.events;
                 }
@@ -70,7 +70,7 @@ function PdfToolsSection() {
             } else if (result.events && Array.isArray(result.events)) {
                 // Handle direct JSON response (not stringified)
                 let timelineText = "📅 Case Timeline\n\n";
-                result.events.forEach((event: any) => {
+                result.events.forEach((event: { date: string; event: string }) => {
                     if (event.date && event.event) {
                         timelineText += `${event.date} – ${event.event}\n\n`;
                     }

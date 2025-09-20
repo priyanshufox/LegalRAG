@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://legalrag-backend-whod.onrender.com';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 
 export interface UploadResponse {
@@ -55,7 +55,7 @@ class ApiClient {
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
           // FastAPI validation errors are arrays
-          errorMessage = errorData.detail.map((err: any) => 
+          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
             `${err.loc?.join('.') || 'field'}: ${err.msg}`
           ).join(', ');
         } else if (typeof errorData.detail === 'string') {
@@ -98,7 +98,7 @@ class ApiClient {
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
           // FastAPI validation errors are arrays
-          errorMessage = errorData.detail.map((err: any) => 
+          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
             `${err.loc?.join('.') || 'field'}: ${err.msg}`
           ).join(', ');
         } else if (typeof errorData.detail === 'string') {
@@ -153,7 +153,7 @@ class ApiClient {
       
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
-          errorMessage = errorData.detail.map((err: any) => 
+          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
             `${err.loc?.join('.') || 'field'}: ${err.msg}`
           ).join(', ');
         } else if (typeof errorData.detail === 'string') {
@@ -188,7 +188,7 @@ class ApiClient {
       
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
-          errorMessage = errorData.detail.map((err: any) => 
+          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
             `${err.loc?.join('.') || 'field'}: ${err.msg}`
           ).join(', ');
         } else if (typeof errorData.detail === 'string') {

@@ -10,6 +10,7 @@ import PdfToolsSidebar from './PdfToolsSidebar';
 import { UploadResponse } from '@/lib/api';
 import Link from 'next/link';
 
+
 export default function RAGLayout() {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [rightSidebarOpen, setRightSidebarOpen] = useState(true);

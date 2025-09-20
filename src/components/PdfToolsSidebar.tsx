@@ -54,13 +54,13 @@ export default function PdfToolsSidebar({ isOpen, onToggle }: PdfToolsSidebarPro
                     if (jsonData.events && Array.isArray(jsonData.events)) {
                         // Convert JSON to timeline format
                         timelineText = "📅 Case Timeline\n\n";
-                        jsonData.events.forEach((event: any) => {
+                        jsonData.events.forEach((event: { date: string; event: string }) => {
                             if (event.date && event.event) {
                                 timelineText += `${event.date} – ${event.event}\n\n`;
                             }
                         });
                     }
-                } catch (e) {
+                } catch {
                     // If not JSON, use the string as is
                     timelineText = result.events;
                 }
@@ -73,7 +73,7 @@ export default function PdfToolsSidebar({ isOpen, onToggle }: PdfToolsSidebarPro
             } else if (result.events && Array.isArray(result.events)) {
                 // Handle direct JSON response (not stringified)
                 let timelineText = "📅 Case Timeline\n\n";
-                result.events.forEach((event: any) => {
+                result.events.forEach((event: { date: string; event: string }) => {
                     if (event.date && event.event) {
                         timelineText += `${event.date} – ${event.event}\n\n`;
                     }
@@ -212,8 +212,6 @@ export default function PdfToolsSidebar({ isOpen, onToggle }: PdfToolsSidebarPro
                         )}
                     </CardContent>
                 </Card>
-
-               x
 
                 {(eventsDatesResult && (eventsDatesResult.timeline || eventsDatesResult.events)) && (
                     <Card className="border-0 shadow-sm">

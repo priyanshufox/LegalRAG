@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Send, Bot, User, Loader2 } from 'lucide-react';
 import { apiClient, QueryResponse } from '@/lib/api';
+import { Response } from '@/components/ai-elements/response';
 
 interface Message {
   id: string;
@@ -124,7 +125,7 @@ export default function ChatInterface({ className }: ChatInterfaceProps) {
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-white border-slate-200'
                   }`}>
-                  <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                  <Response className="text-sm whitespace-pre-wrap">{message.content}</Response>
                 </Card>
 
 

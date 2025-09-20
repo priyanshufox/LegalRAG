@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,8 +8,6 @@ import { Scale, FileText, Search, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
-
-  const router = useRouter();
 
 
 
