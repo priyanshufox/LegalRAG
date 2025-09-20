@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Legal RAG - MVP
+
+A simple legal document research and analysis platform built with Next.js and FastAPI.
+
+## Features
+
+- **Document Upload**: Upload PDF, DOC, and DOCX files via drag-and-drop or file selection
+- **Chat Interface**: Ask questions about uploaded documents in a ChatGPT-like interface
+- **Responsive Design**: Works on desktop and mobile devices
+- **Modern UI**: Clean, professional interface built with Tailwind CSS and shadcn/ui
+
+## API Endpoints
+
+The frontend connects to these backend endpoints:
+
+- `POST /api/upload` - Upload documents
+- `POST /api/query` - Query documents with natural language
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pages
 
-## Learn More
+- **Home** (`/`) - Landing page with feature overview
+- **Dashboard** (`/dashboard`) - Overview dashboard with navigation
+- **RAG Interface** (`/rag`) - Main document upload and chat interface
 
-To learn more about Next.js, take a look at the following resources:
+## Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `RAGLayout` - Main layout with sidebar and chat area
+- `DocumentUpload` - Drag-and-drop file upload component
+- `ChatInterface` - ChatGPT-like chat interface for document queries
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Icons**: Lucide React
+- **API Client**: Custom fetch-based client
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Set the following environment variable to configure the API URL:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+## Development
+
+The app is set up for rapid development with:
+
+- Hot reload with Turbopack
+- TypeScript support
+- ESLint configuration
+- Pre-configured component library
