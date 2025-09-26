@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { FileText, Calendar, FileCheck, X, BookOpen, Search, Settings } from 'lucide-react';
 import Link from 'next/link';
@@ -13,7 +12,7 @@ interface PdfToolsSidebarProps {
 
 type ToolTab = 'chat' | 'guide' | 'cases' | 'timeline' | 'summarizer';
 
-export default function PdfToolsSidebar({ isOpen, onToggle }: PdfToolsSidebarProps) {
+export default function PdfToolsSidebar({ onToggle }: PdfToolsSidebarProps) {
     const pathname = usePathname();
 
     const getActiveTab = (): ToolTab => {

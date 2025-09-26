@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Scale, FileText, Calendar, Search, Users, Heart, ArrowRight, Sparkles, Zap, Shield, Brain } from 'lucide-react';
@@ -87,7 +87,7 @@ export default function Home() {
         {/* Modern gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-slate-900"></div>
         <div className="absolute inset-0 bg-cover bg-center opacity-20">
-          <img src="/banner.jpg" alt="banner" className="w-full h-full object-cover" />
+          <Image src="/banner.jpg" alt="banner" fill className="object-cover" />
         </div>
 
         {/* Animated background elements */}

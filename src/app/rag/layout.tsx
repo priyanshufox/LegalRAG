@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Home, FileText, MessageSquare, Settings, Calendar, FileCheck, BookOpen, Search, User, Crown } from 'lucide-react';
+import { X, FileText, MessageSquare, Settings, Calendar, FileCheck, BookOpen, Search, User, Crown } from 'lucide-react';
 import DocumentUpload from '@/components/DocumentUpload';
 import PdfToolsSidebar from '@/components/PdfToolsSidebar';
 import { UploadResponse } from '@/lib/api';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 interface RAGLayoutProps {
     children: React.ReactNode;
@@ -19,7 +19,6 @@ export default function RAGLayout({ children }: RAGLayoutProps) {
     const [uploadedDocuments, setUploadedDocuments] = useState<UploadResponse[]>([]);
     const [activeView, setActiveView] = useState<'left' | 'main' | 'right'>('main');
     const pathname = usePathname();
-    const router = useRouter();
 
     const handleUploadSuccess = (response: UploadResponse) => {
         setUploadedDocuments(prev => [...prev, response]);
@@ -33,22 +32,6 @@ export default function RAGLayout({ children }: RAGLayoutProps) {
         setRightSidebarOpen(!rightSidebarOpen);
     };
 
-    const getPageTitle = () => {
-        switch (pathname) {
-            case '/rag':
-                return 'Legal Research Assistant';
-            case '/rag/legal_guide':
-                return 'Legal Guide';
-            case '/rag/pdf_summarizer':
-                return 'PDF Summarizer';
-            case '/rag/relevant_cases':
-                return 'Relevant Cases';
-            case '/rag/timeline_extract':
-                return 'Timeline Extractor';
-            default:
-                return 'Legal Research Assistant';
-        }
-    };
 
     const getPageIcon = () => {
         switch (pathname) {

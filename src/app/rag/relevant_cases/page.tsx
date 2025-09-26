@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Search, Loader2, FileText, Calendar, Scale, ExternalLink, Upload } from 'lucide-react';
-import { apiClient } from '@/lib/api';
-import { Response } from '@/components/ai-elements/response';
 
 interface CaseResult {
     id: string;
@@ -68,7 +66,7 @@ export default function RelevantCasesPage() {
             if (data.success) {
                 setKeywords(data.keywords || []);
                 setTotalCases(data.total_cases || 0);
-                const cases: CaseResult[] = (data.cases || []).map((caseItem: any, index: number) => ({
+                const cases: CaseResult[] = (data.cases || []).map((caseItem: { title: string; court: string; publish_date: string; citation: string; link: string }, index: number) => ({
                     id: (index + 1).toString(),
                     title: caseItem.title,
                     court: caseItem.court,
