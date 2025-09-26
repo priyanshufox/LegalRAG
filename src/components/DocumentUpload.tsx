@@ -117,7 +117,7 @@ export default function DocumentUpload({ onUploadSuccess }: DocumentUploadProps)
           <FileText className="h-12 w-12 mx-auto mb-4 text-slate-400" />
           <p className="text-lg font-medium mb-2">Drop files here or click to upload</p>
           <p className="text-sm text-slate-500 mb-4">
-            Support for PDF, DOC, DOCX files up to 10MB
+            Support for PDF files up to 10MB
           </p>
           <Button variant="outline" disabled={uploading}>
             {uploading ? 'Uploading...' : 'Choose Files'}
@@ -129,7 +129,7 @@ export default function DocumentUpload({ onUploadSuccess }: DocumentUploadProps)
           ref={fileInputRef}
           type="file"
           multiple
-          accept=".pdf,.doc,.docx"
+          accept=".pdf"
           onChange={handleFileSelect}
           className="hidden"
         />

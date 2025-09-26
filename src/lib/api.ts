@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://legalrag-backend-whod.onrender.com';
+const API_BASE_URL ='http://localhost:8000';
 
 
 export interface UploadResponse {
