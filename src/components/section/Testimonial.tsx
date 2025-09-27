@@ -17,7 +17,7 @@ export default function Testimonial(_props: Props): React.JSX.Element {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            Stories from teams who've
+            Stories from teams who&apos;ve
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold text-gray-400 mb-8">
             leveled up with our support.

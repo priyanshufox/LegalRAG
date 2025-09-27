@@ -88,7 +88,7 @@ export default function Header(_props: Props): React.JSX.Element {
                     }}
                     className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
                   >
-                    <a
+                    <Link
                       href="/rag"
                       className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50"
                     >
@@ -96,8 +96,8 @@ export default function Header(_props: Props): React.JSX.Element {
                       <div className="text-gray-500 text-xs">
                         Upload and chat with legal documents
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/rag/legal_guide"
                       className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50"
                     >
@@ -105,8 +105,8 @@ export default function Header(_props: Props): React.JSX.Element {
                       <div className="text-gray-500 text-xs">
                         AI-powered legal research assistant
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/rag/relevant_cases"
                       className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50"
                     >
@@ -114,8 +114,8 @@ export default function Header(_props: Props): React.JSX.Element {
                       <div className="text-gray-500 text-xs">
                         Find similar cases and precedents
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/rag/timeline_extract"
                       className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50"
                     >
@@ -123,26 +123,26 @@ export default function Header(_props: Props): React.JSX.Element {
                       <div className="text-gray-500 text-xs">
                         Extract chronological events from documents
                       </div>
-                    </a>
+                    </Link>
                   </motion.div>
                 )}
               </div>
 
               {/* Pricing */}
-              <a
+              <Link
                 href="/#pricing"
                 className="text-gray-700 hover:text-gray-900 transition-colors"
               >
                 Pricing
-              </a>
+              </Link>
 
               {/* Security */}
-              <a
+              <Link
                 href="/#security"
                 className="text-gray-700 hover:text-gray-900 transition-colors"
               >
                 Security
-              </a>
+              </Link>
             </nav>
 
             {/* Right Side Actions */}
@@ -238,12 +238,12 @@ export default function Header(_props: Props): React.JSX.Element {
 
             <div className="px-4 pt-4 border-t border-gray-200">
               <div className="space-y-2">
-                <a
+                <Link
                   href="#demo"
                   className="block bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium text-center"
                 >
                   Book demo
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
