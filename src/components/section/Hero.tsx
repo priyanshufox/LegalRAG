@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "motion/react";
 import Spline from "@splinetool/react-spline";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Hero({}: Props) {
+export default function Hero(_props: Props): React.JSX.Element {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-[90vh] overflow-hidden bg-gray-100 text-black">
       {/* Main Grid Layout */}

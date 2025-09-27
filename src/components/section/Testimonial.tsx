@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "motion/react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Testimonial({}: Props) {
+export default function Testimonial(_props: Props): React.JSX.Element {
   return (
     <section className="relative py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-8">
@@ -74,9 +74,10 @@ export default function Testimonial({}: Props) {
               {/* Testimonial Quote */}
               <div className="mb-8">
                 <p className="text-gray-700 text-lg leading-relaxed max-w-sm">
-                  "I've been able to draft consumer complaint letters
-                  effortlessly. It's amazing how it simplifies the process and
-                  provides a professional touch to all my correspondence."
+                  &quot;I&apos;ve been able to draft consumer complaint letters
+                  effortlessly. It&apos;s amazing how it simplifies the process
+                  and provides a professional touch to all my
+                  correspondence.&quot;
                 </p>
               </div>
             </div>
@@ -125,9 +126,10 @@ export default function Testimonial({}: Props) {
               {/* Testimonial Quote */}
               <div className="mb-8">
                 <p className="text-gray-700 text-lg leading-relaxed max-w-sm">
-                  "The litigation analysis feature is a godsend. It has helped
-                  me in identifying trends and preparing better for my cases.
-                  The app is a true companion for any modern-day lawyer."
+                  &quot;The litigation analysis feature is a godsend. It has
+                  helped me in identifying trends and preparing better for my
+                  cases. The app is a true companion for any modern-day
+                  lawyer.&quot;
                 </p>
               </div>
             </div>

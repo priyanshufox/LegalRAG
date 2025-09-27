@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "motion/react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Feature_2({}: Props) {
+export default function Feature_2(_props: Props): React.JSX.Element {
   return (
     <section className="relative py-20 bg-white">
       <div className="max-w-7xl mx-auto px-8">
@@ -43,7 +43,7 @@ export default function Feature_2({}: Props) {
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Private</h3>
             <p className="text-gray-600 mb-6">
-              We stand firm on privacy, ensuring that users' conversations
+              We stand firm on privacy, ensuring that users&apos; conversations
               remain secure and anonymous.
             </p>
             <p className="text-gray-600 leading-relaxed">

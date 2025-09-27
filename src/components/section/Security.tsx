@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "motion/react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Security({}: Props) {
+export default function Security(_props: Props): React.JSX.Element {
   return (
     <section id="security" className="relative py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-8">
@@ -24,7 +24,7 @@ export default function Security({}: Props) {
 
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 Designed from the ground up to safeguard your customer data,
-                Legal RAG adheres to the industry's highest standards of
+                Legal RAG adheres to the industry&apos;s highest standards of
                 security and privacy.
               </p>
 

@@ -1,9 +1,6 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Sparkles, Zap, Shield, Brain } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import Hero from "@/components/section/Hero";
 import Feature_1 from "@/components/section/Feature_1";
 import Feature_2 from "@/components/section/Feature_2";
@@ -16,12 +13,6 @@ import Pricing from "@/components/section/Pricing";
 import ForWhom from "@/components/section/ForWhom";
 
 export default function Home(): React.JSX.Element {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <>
       <Header />

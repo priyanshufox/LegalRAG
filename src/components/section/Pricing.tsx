@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Check, X, Info, Server, Shield, Lock, Users, Zap } from "lucide-react";
+import { Check, X, Server, Shield, Lock, Users, Zap } from "lucide-react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Pricing({}: Props) {
+export default function Pricing(_props: Props): React.JSX.Element {
   const [currency, setCurrency] = useState<"USD" | "INR">("INR");
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
     "yearly"

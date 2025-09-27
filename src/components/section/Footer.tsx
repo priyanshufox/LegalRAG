@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "motion/react";
 import WorldMap from "@/components/ui/world-map";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Footer({}: Props) {
+export default function Footer(_props: Props): React.JSX.Element {
   return (
     <footer className="relative bg-gray-100 py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">

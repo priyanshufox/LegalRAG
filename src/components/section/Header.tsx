@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Header({}: Props) {
+export default function Header(_props: Props): React.JSX.Element {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -202,35 +203,38 @@ export default function Header({}: Props) {
               <div className="font-medium text-gray-900 px-4 py-2">
                 Products
               </div>
-              <a href="/rag" className="block px-6 py-2 text-sm text-gray-700">
+              <Link
+                href="/rag"
+                className="block px-6 py-2 text-sm text-gray-700"
+              >
                 Document Chat
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/rag/legal_guide"
                 className="block px-6 py-2 text-sm text-gray-700"
               >
                 Legal Guide
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/rag/relevant_cases"
                 className="block px-6 py-2 text-sm text-gray-700"
               >
                 Case Research
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/rag/timeline_extract"
                 className="block px-6 py-2 text-sm text-gray-700"
               >
                 Timeline Extraction
-              </a>
+              </Link>
             </div>
 
-            <a href="/#pricing" className="block px-4 py-2 text-gray-700">
+            <Link href="/#pricing" className="block px-4 py-2 text-gray-700">
               Pricing
-            </a>
-            <a href="/#security" className="block px-4 py-2 text-gray-700">
+            </Link>
+            <Link href="/#security" className="block px-4 py-2 text-gray-700">
               Security
-            </a>
+            </Link>
 
             <div className="px-4 pt-4 border-t border-gray-200">
               <div className="space-y-2">

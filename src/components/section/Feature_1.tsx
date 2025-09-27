@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "motion/react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Feature_1({}: Props) {
+export default function Feature_1(_props: Props): React.JSX.Element {
   return (
     <section className="relative py-20 bg-white">
       <div className="max-w-7xl mx-auto px-8">
@@ -26,7 +26,7 @@ export default function Feature_1({}: Props) {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-8"
           >
-            We've got your legal research covered.
+            We&apos;ve got your legal research covered.
           </motion.h3>
         </div>
 
@@ -40,7 +40,8 @@ export default function Feature_1({}: Props) {
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
             Explore features that boost your productivity. From document
-            automation to advanced research, we've got the hard work covered.
+            automation to advanced research, we&apos;ve got the hard work
+            covered.
           </motion.p>
         </div>
 

@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "motion/react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function Feature_3({}: Props) {
+export default function Feature_3(_props: Props): React.JSX.Element {
   return (
     <section className="relative py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-8">
@@ -171,7 +171,7 @@ export default function Feature_3({}: Props) {
               </div>
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              Shareholders' Agreement
+              Shareholders&apos; Agreement
             </h3>
             <p className="text-gray-300">
               Automatically generate comprehensive shareholder contracts

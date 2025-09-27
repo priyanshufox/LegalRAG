@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
-import { Users, FileText, Gavel, Building, BookOpen } from "lucide-react";
+import { FileText, Gavel, Building, BookOpen } from "lucide-react";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function ForWhom({}: Props) {
+export default function ForWhom(_props: Props): React.JSX.Element {
   const userTypes = [
     {
       title: "AI for Legal Consumers",
@@ -51,8 +51,8 @@ export default function ForWhom({}: Props) {
 
           {/* Subtitle */}
           <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Whether you're a consumer, a student, a solo lawyer, or a full law
-            firm - Legal RAG adapts to your legal needs and boosts your
+            Whether you&apos;re a consumer, a student, a solo lawyer, or a full
+            law firm - Legal RAG adapts to your legal needs and boosts your
             productivity.
           </p>
         </motion.div>
