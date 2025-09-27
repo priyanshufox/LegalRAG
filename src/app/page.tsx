@@ -1,21 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Scale,
-  FileText,
-  Calendar,
-  Search,
-  Users,
-  Heart,
-  ArrowRight,
-  Sparkles,
-  Zap,
-  Shield,
-  Brain,
-} from "lucide-react";
+import React from "react";
+import { ArrowRight, Sparkles, Zap, Shield, Brain } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/section/Hero";
