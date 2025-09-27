@@ -15,7 +15,7 @@ import Header from "@/components/section/Header";
 import Pricing from "@/components/section/Pricing";
 import ForWhom from "@/components/section/ForWhom";
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
