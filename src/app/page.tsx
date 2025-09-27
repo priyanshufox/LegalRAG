@@ -55,39 +55,39 @@ export default function Home(): React.JSX.Element {
   //             <ul className="flex space-x-8">
   //               <li>
   //                 <button
-  //                   onClick={() => scrollToSection('home')}
-  //                   className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group"
+  //                   onClick={() => scrollToSection(&apos;home&apos;)}
+  //                   className=&quot;text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group&quot;
   //                 >
   //                   Home
-  //                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+  //                   <span className=&quot;absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full&quot;></span>
   //                 </button>
   //               </li>
   //               <li>
   //                 <button
-  //                   onClick={() => scrollToSection('features')}
-  //                   className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group"
+  //                   onClick={() => scrollToSection(&apos;features&apos;)}
+  //                   className=&quot;text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group&quot;
   //                 >
   //                   Features
-  //                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+  //                   <span className=&quot;absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full&quot;></span>
   //                 </button>
   //               </li>
   //               <li>
   //                 <button
-  //                   onClick={() => scrollToSection('how-it-works')}
-  //                   className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group"
+  //                   onClick={() => scrollToSection(&apos;how-it-works&apos;)}
+  //                   className=&quot;text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group&quot;
   //                 >
   //                   How it Works
-  //                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+  //                   <span className=&quot;absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full&quot;></span>
   //                 </button>
   //               </li>
   //             </ul>
   //             <div className="flex items-center space-x-4">
   //               <button
-  //                 onClick={() => scrollToSection('team')}
-  //                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group"
+  //                 onClick={() => scrollToSection(&apos;team&apos;)}
+  //                 className=&quot;text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group&quot;
   //               >
   //                 Meet Our Team
-  //                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+  //                 <span className=&quot;absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full&quot;></span>
   //               </button>
   //               <Link href="/rag">
   //                 <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full px-6 py-2 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium">
@@ -124,10 +124,10 @@ export default function Home(): React.JSX.Element {
   //           <span className="text-sm font-medium text-white">AI-Powered Legal Assistant</span>
   //         </div>
 
-  //         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight">
+  //         <h1 className=&quot;text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight&quot;>
   //           Welcome to Legal RAG
   //         </h1>
-  //         <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed text-slate-200">
+  //         <p className=&quot;text-xl md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed text-slate-200&quot;>
   //           Your AI-powered legal assistant with encrypted document handling, case summarization, and intelligent past case search.
   //         </p>
 
@@ -145,7 +145,7 @@ export default function Home(): React.JSX.Element {
   //             size="lg"
   //             variant="outline"
   //             className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
-  //             onClick={() => scrollToSection('features')}
+  //             onClick={() => scrollToSection(&apos;features&apos;)}
   //           >
   //             Explore Features
   //           </Button>
