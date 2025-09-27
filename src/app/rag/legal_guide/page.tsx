@@ -40,19 +40,16 @@ export default function LegalGuidePage() {
     setError(null);
 
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/tools/legal-guide",
-        {
-          method: "POST",
-          headers: {
-            accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            query: query.trim(),
-          }),
-        }
-      );
+      const response = await fetch("/api/proxy/tools/legal-guide", {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: query.trim(),
+        }),
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

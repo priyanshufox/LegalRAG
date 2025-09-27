@@ -64,16 +64,13 @@ export default function RelevantCasesPage() {
       }
       formData.append("query", query.trim() || "string");
 
-      const response = await fetch(
-        "http://localhost:8000/api/tools/similar-cases",
-        {
-          method: "POST",
-          headers: {
-            accept: "application/json",
-          },
-          body: formData,
-        }
-      );
+      const response = await fetch("/api/proxy/tools/similar-cases", {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+        },
+        body: formData,
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

@@ -1,5 +1,8 @@
-const API_BASE_URL ='https://legalrag-backend-whod.onrender.com';
-
+// Use proxy routes to avoid CORS issues
+const API_BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000/api/proxy"
+    : "/api/proxy";
 
 export interface UploadResponse {
   message: string;
@@ -16,7 +19,7 @@ export interface QueryResponse {
 }
 
 export interface ExtractEventsDatesResponse {
-  events: string | Array<{date: string, event: string}>;
+  events: string | Array<{ date: string; event: string }>;
   dates?: string[];
   timeline?: string;
 }
@@ -37,7 +40,7 @@ class ApiClient {
     options: RequestInit = {}
   ): Promise<T> {
     const url = `${this.baseURL}${endpoint}`;
-    
+
     const config: RequestInit = {
       headers: {
         ...options.headers,
@@ -51,20 +54,23 @@ class ApiClient {
       const errorData = await response.json().catch(() => ({}));
       // Handle FastAPI validation errors properly
       let errorMessage = `HTTP error! status: ${response.status}`;
-      
+
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
           // FastAPI validation errors are arrays
-          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
-            `${err.loc?.join('.') || 'field'}: ${err.msg}`
-          ).join(', ');
-        } else if (typeof errorData.detail === 'string') {
+          errorMessage = errorData.detail
+            .map(
+              (err: { loc?: string[]; msg: string }) =>
+                `${err.loc?.join(".") || "field"}: ${err.msg}`
+            )
+            .join(", ");
+        } else if (typeof errorData.detail === "string") {
           errorMessage = errorData.detail;
         } else {
           errorMessage = JSON.stringify(errorData.detail);
         }
       }
-      
+
       throw new Error(errorMessage);
     }
 
@@ -76,16 +82,15 @@ class ApiClient {
     return {};
   }
 
-
   // Document upload endpoint
   async uploadDocument(file: File): Promise<UploadResponse> {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append("file", file);
 
-    const url = `${this.baseURL}/api/upload`;
-    
+    const url = `${this.baseURL}/upload`;
+
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: this.getAuthHeaders(),
       body: formData,
     });
@@ -94,20 +99,23 @@ class ApiClient {
       const errorData = await response.json().catch(() => ({}));
       // Handle FastAPI validation errors properly
       let errorMessage = `HTTP error! status: ${response.status}`;
-      
+
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
           // FastAPI validation errors are arrays
-          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
-            `${err.loc?.join('.') || 'field'}: ${err.msg}`
-          ).join(', ');
-        } else if (typeof errorData.detail === 'string') {
+          errorMessage = errorData.detail
+            .map(
+              (err: { loc?: string[]; msg: string }) =>
+                `${err.loc?.join(".") || "field"}: ${err.msg}`
+            )
+            .join(", ");
+        } else if (typeof errorData.detail === "string") {
           errorMessage = errorData.detail;
         } else {
           errorMessage = JSON.stringify(errorData.detail);
         }
       }
-      
+
       throw new Error(errorMessage);
     }
 
@@ -116,20 +124,20 @@ class ApiClient {
 
   // Query endpoint
   async queryDocuments(query: QueryRequest): Promise<QueryResponse> {
-    console.log('Sending query request:', query);
+    console.log("Sending query request:", query);
     try {
-      const response = await this.request<QueryResponse>('/api/query', {
-        method: 'POST',
+      const response = await this.request<QueryResponse>("/query", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           ...this.getAuthHeaders(),
         },
         body: JSON.stringify(query),
       });
-      console.log('Query response:', response);
+      console.log("Query response:", response);
       return response;
     } catch (error) {
-      console.error('Query request failed:', error);
+      console.error("Query request failed:", error);
       throw error;
     }
   }
@@ -137,12 +145,12 @@ class ApiClient {
   // Extract events and dates from PDF
   async extractEventsDates(file: File): Promise<ExtractEventsDatesResponse> {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append("file", file);
 
-    const url = `${this.baseURL}/api/tools/extract-events-dates`;
-    
+    const url = `${this.baseURL}/tools/extract-events-dates`;
+
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: this.getAuthHeaders(),
       body: formData,
     });
@@ -150,19 +158,22 @@ class ApiClient {
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       let errorMessage = `HTTP error! status: ${response.status}`;
-      
+
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
-          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
-            `${err.loc?.join('.') || 'field'}: ${err.msg}`
-          ).join(', ');
-        } else if (typeof errorData.detail === 'string') {
+          errorMessage = errorData.detail
+            .map(
+              (err: { loc?: string[]; msg: string }) =>
+                `${err.loc?.join(".") || "field"}: ${err.msg}`
+            )
+            .join(", ");
+        } else if (typeof errorData.detail === "string") {
           errorMessage = errorData.detail;
         } else {
           errorMessage = JSON.stringify(errorData.detail);
         }
       }
-      
+
       throw new Error(errorMessage);
     }
 
@@ -172,12 +183,12 @@ class ApiClient {
   // Summarize PDF
   async summarizePdf(file: File): Promise<SummarizePdfResponse> {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append("file", file);
 
-    const url = `${this.baseURL}/api/tools/summarize-pdf`;
-    
+    const url = `${this.baseURL}/tools/summarize-pdf`;
+
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: this.getAuthHeaders(),
       body: formData,
     });
@@ -185,19 +196,22 @@ class ApiClient {
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       let errorMessage = `HTTP error! status: ${response.status}`;
-      
+
       if (errorData.detail) {
         if (Array.isArray(errorData.detail)) {
-          errorMessage = errorData.detail.map((err: { loc?: string[]; msg: string }) => 
-            `${err.loc?.join('.') || 'field'}: ${err.msg}`
-          ).join(', ');
-        } else if (typeof errorData.detail === 'string') {
+          errorMessage = errorData.detail
+            .map(
+              (err: { loc?: string[]; msg: string }) =>
+                `${err.loc?.join(".") || "field"}: ${err.msg}`
+            )
+            .join(", ");
+        } else if (typeof errorData.detail === "string") {
           errorMessage = errorData.detail;
         } else {
           errorMessage = JSON.stringify(errorData.detail);
         }
       }
-      
+
       throw new Error(errorMessage);
     }
 
