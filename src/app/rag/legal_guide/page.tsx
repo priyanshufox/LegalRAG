@@ -25,9 +25,10 @@ export default function LegalGuidePage() {
   const [isLoading, setIsLoading] = useState(false);
   interface LegalResult {
     id: string;
-    title: string;
-    content: string;
-    source: string;
+    question: string;
+    answer: string;
+    sources: string[];
+    timestamp: Date;
   }
   const [results, setResults] = useState<LegalResult[]>([]);
   const [error, setError] = useState<string | null>(null);
