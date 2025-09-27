@@ -5,18 +5,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { BookOpen, Search, Loader2, FileText, Calendar, Scale } from 'lucide-react';
+import { apiClient } from '@/lib/api';
 import { Response } from '@/components/ai-elements/response';
 
 export default function LegalGuidePage() {
     const [query, setQuery] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [results, setResults] = useState<Array<{
-        id: string;
-        question: string;
-        answer: string;
-        sources: string[];
-        timestamp: Date;
-    }>>([]);
+    const [results, setResults] = useState<any[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     const handleSearch = async () => {
@@ -117,7 +112,7 @@ export default function LegalGuidePage() {
                         <h3 className="text-lg font-medium text-slate-900 mb-2">Legal Research Assistant</h3>
                         <p className="text-slate-600 max-w-md mx-auto">
                             Ask questions about legal procedures, regulations, case law, or any legal topic.
-                            I&apos;ll help you find relevant information from your uploaded documents.
+                            I'll help you find relevant information from your uploaded documents.
                         </p>
                     </div>
                 )}
